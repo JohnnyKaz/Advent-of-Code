@@ -10,7 +10,7 @@ with open("input.txt") as f:
     minSide = np.min(sides, axis=1)
     wrapPerGift = 2 * np.sum(sides, axis=1) + minSide
     print("Part 1:", np.sum(wrapPerGift))
-    # Part 1:
+    # Part 2:
     maxDim = np.max(dims, axis=1)
     ribbonPerGift = 2 * (np.sum(dims, axis=1) - maxDim)
     bowPerGift = np.prod(dims, axis=1)
