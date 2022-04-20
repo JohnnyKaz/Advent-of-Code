@@ -26,5 +26,22 @@ def lookAndSay(initial, iterations):
         previous = ''.join(current)
     return len(previous)
 
-print("Part 1:", lookAndSay(3113322113, 40))
+
+
+def approximateLenAfter(length, iterations):
+    """ 
+    Approximates the length after 'iterations' iterations with
+    a seed of length 'length', using the Conway's constant
+    """
+    l = 1.303577269 # Conway's constant
+    #length = len(str(seedLength))
+    for i in range(iterations):
+        length *= l
+    return int(length)
+
+# Part 1
+part1 = lookAndSay(3113322113, 40)
+print("Part 1:", part1)
+# Part 2
 print("Part 2:", lookAndSay(3113322113, 50))
+print("Part 2 Quick Approximation (using solution from part1):", approximateLenAfter(part1, 10))
